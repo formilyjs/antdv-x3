@@ -1,0 +1,42 @@
+{
+  "name": "@formily/antdv-x3-prototypes",
+  "private": true,
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "lib",
+  "types": "lib/index.d.ts",
+  "engines": {
+    "npm": ">=3.0.0"
+  },
+  "module": "esm",
+  "umd:main": "dist/formily.antdv-x3-prototypes.umd.production.js",
+  "unpkg": "dist/formily.antdv-x3-prototypes.umd.production.js",
+  "jsdelivr": "dist/formily.antdv-x3-prototypes.umd.production.js",
+  "jsnext:main": "esm",
+  "sideEffects": [
+    "dist/*",
+    "esm/*.js",
+    "lib/*.js",
+    "src/*.ts",
+    "*.less",
+    "*.scss",
+    "**/*/style.js"
+  ],
+  "scripts": {
+    "build": "formily-tpl build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/formilyjs/antdv-x3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/formilyjs/antdv-x3/issues"
+  },
+  "homepage": "https://github.com/formilyjs/antdv-x3#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.37"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "name": "@formily/antdv-x3",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "lib",
+  "types": "lib/index.d.ts",
+  "engines": {
+    "npm": ">=3.0.0"
+  },
+  "module": "esm",
+  "umd:main": "dist/formily.antdv-x3.umd.production.js",
+  "unpkg": "dist/formily.antdv-x3.umd.production.js",
+  "jsdelivr": "dist/formily.antdv-x3.umd.production.js",
+  "jsnext:main": "esm",
+  "sideEffects": [
+    "dist/*",
+    "esm/*.js",
+    "lib/*.js",
+    "src/*.ts",
+    "*.less",
+    "*.scss",
+    "**/*/style.js"
+  ],
+  "scripts": {
+    "build": "formily-tpl build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/formilyjs/antdv-x3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/formilyjs/antdv-x3/issues"
+  },
+  "homepage": "https://github.com/formilyjs/antdv-x3#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.37"
+  },
+  "dependencies": {
+    "@formily/core": "^2.1.4",
+    "@formily/grid": "^2.1.4",
+    "@formily/json-schema": "^2.1.4",
+    "@formily/reactive": "^2.1.4",
+    "@formily/reactive-vue": "^2.1.4",
+    "@formily/shared": "^2.1.4",
+    "@formily/vue": "^2.1.4",
+    "vue-slicksort": "^2.0.0-alpha.5"
+  },
+  "devDependencies": {
+    "vue": "^3.2.37"
+  }
+}

@@ -1,9 +1,9 @@
-English | [简体中文](./README.zh-CN.md)
+[English](./README.md) | 简体中文
 
 <p align="center">
 <img src="https://img.alicdn.com/tfs/TB1fHhZu4D1gK0jSZFyXXciOVXa-2500-1200.png">
-<!-- <img src="https://img.shields.io/npm/dt/@formily/antdv-x3"/> -->
-<!-- <img src="https://img.shields.io/npm/dm/@formily/antdv-x3"/> -->
+<!-- <img src="https://img.shields.io/npm/dt/@formily/antdv-x3"/>
+<img src="https://img.shields.io/npm/dm/@formily/antdv-x3"/> -->
 <a href="https://www.npmjs.com/package/@formily/antdv-x3"><img src="https://img.shields.io/npm/v/@formily/antdv-x3.svg"></a>
 <a href="https://codecov.io/gh/formilyjs/antdv-x3">
   <img src="https://codecov.io/gh/formilyjs/antdv-x3/branch/main/graph/badge.svg?token=3V9RU8Wh9d"/>
@@ -16,38 +16,38 @@ English | [简体中文](./README.zh-CN.md)
 
 ---
 
-## Overview
+## 概要
 
-The Awesome Components Library with Formily & ant-design-vue & Vue3.
+这是一个结合了 Formily & ant-design-vue & Vue3 的超酷组件库.
 
-## Features
+## 特性
 
-- 🖼 Designable, You can quickly develop forms at low cost through [Form Builder](https://designable-antd.formilyjs.org/).
-- 🚀 High performance, fields managed independently, rather rerender the whole tree.
-- 💡 Integrated Alibaba Fusion and Ant Design components are guaranteed to work out of the box.
-- 🎨 JSON Schema applied for BackEnd. JSchema applied for FrontEnd. Two paradigms can be converted to each other.
-- 🏅 Side effects are managed independently, making form data linkages easier than ever before.
-- 🌯 Override most complicated form layout use cases.
+- 🖼 可设计，借助 Form Builder 可以快速搭建表单
+- 🚀 高性能，字段分布式渲染，大大减轻 React 渲染压力
+- 💡 支持 Ant Design/Fusion Next 组件体系
+- 🎨 JSX 标签化写法/JSON Schema 数据驱动方案无缝迁移过渡
+- 🏅 副作用逻辑独立管理，涵盖各种复杂联动校验逻辑
+- 🌯 支持各种表单复杂布局方案
 
-## Form Builder
+## 表单设计器
 
 ![https://designable-antd.formilyjs.org/](https://img.alicdn.com/imgextra/i3/O1CN01xAJj1y1wcGzXYc1Uq_!!6000000006328-2-tps-2980-1740.png)
 
-## WebSite
+## 官网
 
 https://antdv-x3.formilyjs.org
 
-## Community
+## 生态产品
 
 - [formily](https://github.com/alibaba/formily)
 - [formilyjs](https://github.com/formilyjs)
 - [designable](https://github.com/alibaba/designable)
 
-## How to contribute?
+## 如何贡献?
 
 - [Contribute document](https://formilyjs.org/zh-CN/guide/contribution)
 
-## Contributors
+## 贡献者
 
 This project exists thanks to all the people who contribute.
 <a href="https://github.com/formilyjs/antdv-x3/graphs/contributors"><img src="https://contrib.rocks/image?repo=formilyjs/antdv-x3" /></a>
