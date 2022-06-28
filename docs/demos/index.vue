@@ -1,5 +1,5 @@
 <template>
-  <FormProvider :form="form">
+  <FormProvider :form="formInstance">
     <Space>
       <Field
         name="price"
@@ -48,13 +48,13 @@ import { createForm } from '@formily/core'
 import { InputNumber, FormItem, Space } from '@formily/antdv-x3'
 import { FormProvider, FormConsumer, Field } from '@formily/vue'
 
-const form = createForm()
+const formInstance = createForm()
 
 export default {
   components: { FormProvider, FormConsumer, Field, FormItem, Space },
   data() {
     return {
-      form,
+      formInstance,
       InputNumber,
       FormItem,
     }

@@ -277,7 +277,11 @@ const ArrayBaseAddition = defineComponent({
 
 const ArrayBaseRemove = defineComponent({
   name: 'ArrayBaseRemove',
-  props: ['title', 'index'],
+  // props: ['title', 'index'],
+  props: {
+    title: String,
+    index: Number,
+  },
   setup(props, { attrs }) {
     const indexRef = useIndex(props.index)
     const base = useArray()
