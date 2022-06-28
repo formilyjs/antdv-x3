@@ -4,14 +4,11 @@ const CodeSandBoxHTML = '<div id="app"></div>'
 const CodeSandBoxJS = `
 import Vue from 'vue'
 import App from './App.vue'
-import "@formily/antdv-x3/dist/antdv.css";
+import "@formily/antdv-x3/dist/antdv-x3.css";
 import "ant-design-vue/dist/antd.css";
 
-Vue.config.productionTip = false
-
-new Vue({
-  render: h => h(App),
-}).$mount('#app')`
+Vue.createApp(App).mount('#app')
+`
 
 const createForm = ({ method, action, data }) => {
   const form = document.createElement('form') // 构造 form
@@ -66,16 +63,13 @@ export function createCodeSandBox(codeStr) {
             '@formily/vue': 'latest',
             '@formily/antdv-x3': 'latest',
             axios: '^0.21.1',
-            'core-js': '^3.6.5',
+            'core-js': '^3.8.3',
             'ant-design-vue': '^3.2.6',
-            'vue-demi': 'latest',
-            vue: '^2.6.11',
+            vue: '^3.2.37',
           },
           devDependencies: {
-            '@vue/cli-plugin-babel': '~4.5.0',
-            '@vue/cli-service': '~4.5.0',
-            'vue': 'latest',
-            'vue-template-compiler': '^2.6.11',
+            '@vue/cli-plugin-babel': '~5.0.0',
+            '@vue/cli-service': '~5.0.0',
             less: 'latest',
             'less-loader': '^5.0.0',
           },
