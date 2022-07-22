@@ -46,6 +46,7 @@
     "@formily/reactive-vue": "^2.1.4",
     "@formily/shared": "^2.1.4",
     "@formily/vue": "^2.1.4",
+    "moment": "^2.29.4",
     "vue-slicksort": "^2.0.0-alpha.5"
   },
   "devDependencies": {

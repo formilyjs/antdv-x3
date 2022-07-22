@@ -62,7 +62,6 @@ export function createCodeSandBox(codeStr) {
             '@formily/core': 'latest',
             '@formily/vue': 'latest',
             '@formily/antdv-x3': 'latest',
-            axios: '^0.21.1',
             'core-js': '^3.8.3',
             'ant-design-vue': '^3.2.6',
             vue: '^3.2.37',
@@ -71,20 +70,25 @@ export function createCodeSandBox(codeStr) {
             '@vue/cli-plugin-babel': '~5.0.0',
             '@vue/cli-service': '~5.0.0',
             less: 'latest',
-            'less-loader': '^5.0.0',
+            'less-loader': 'latest',
           },
           babel: {
             presets: ['@vue/cli-plugin-babel/preset'],
           },
           vue: {
             devServer: {
+              headers: {
+                'Access-Control-Allow-Origin': '*',
+              },
               host: '0.0.0.0',
-              disableHostCheck: true, // 必须
+              allowedHosts: 'all',
             },
             css: {
               loaderOptions: {
                 less: {
-                  javascriptEnabled: true,
+                  lessOptions: {
+                    javascriptEnabled: true,
+                  },
                 },
               },
             },

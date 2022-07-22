@@ -2119,7 +2119,7 @@
     "@vuepress/core" "2.0.0-beta.38"
     prismjs "^1.27.0"
 
-"@vuepress/plugin-search@2.0.0-beta.38", "@vuepress/plugin-search@^2.0.0-beta.37":
+"@vuepress/plugin-search@^2.0.0-beta.37":
   version "2.0.0-beta.38"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-search/-/plugin-search-2.0.0-beta.38.tgz#aecbd09cf228f6f0552c1ee94d9abebb238dd6a8"
   integrity sha512-bv5rDpXFjssYiP6wDdskObcKm9cEevKXVThx/F+0rwN0mVACqbEET0RvLeoU3uE5PYWJYB6lmh7xdn/74fPkWg==
@@ -7586,6 +7586,11 @@ moment@^2.29.3:
   version "2.29.3"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.3.tgz#edd47411c322413999f7a5940d526de183c031f3"
   integrity sha512-c6YRvhEo//6T2Jz/vVtYzqBzwvPT95JBQ+smCytzf7c50oMZRsR/a4w88aD34I+/QVSfnoAnSBFPJHItlOMJVw==
+
+moment@^2.29.4:
+  version "2.29.4"
+  resolved "https://pkgs.d.xiaomi.net:443/artifactory/api/npm/mi-npm/moment/-/moment-2.29.4.tgz#3dbe052889fe7c1b2ed966fcb3a77328964ef108"
+  integrity sha1-Pb4FKIn+fBsu2Wb8s6dzKJZO8Qg=
 
 move-concurrently@^1.0.1:
   version "1.0.1"
