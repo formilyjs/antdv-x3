@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.0-alpha.2(2022-07-22)
+
+### :memo: Documents Changes
+
+1. [docs: change codesandbox code](https://github.com/formilyjs/antdv-x3/commit/ee8c179) :point_right: ( [zhouxinyong](https://github.com/zhouxinyong) )
+
 ## v1.0.0-alpha.1(2022-07-22)
 
 ### No Change Log

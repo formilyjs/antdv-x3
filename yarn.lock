@@ -2119,7 +2119,7 @@
     "@vuepress/core" "2.0.0-beta.38"
     prismjs "^1.27.0"
 
-"@vuepress/plugin-search@^2.0.0-beta.37":
+"@vuepress/plugin-search@2.0.0-beta.38", "@vuepress/plugin-search@^2.0.0-beta.37":
   version "2.0.0-beta.38"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-search/-/plugin-search-2.0.0-beta.38.tgz#aecbd09cf228f6f0552c1ee94d9abebb238dd6a8"
   integrity sha512-bv5rDpXFjssYiP6wDdskObcKm9cEevKXVThx/F+0rwN0mVACqbEET0RvLeoU3uE5PYWJYB6lmh7xdn/74fPkWg==
