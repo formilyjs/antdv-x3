@@ -21,7 +21,7 @@ export type EditableProps = FormItemProps
 
 const useInitialPattern = (fieldRef) => {
   const field = fieldRef.value
-  return computed(() => field?.pattern)
+  return computed(() => field?.parent?.pattern || field?.form?.pattern)
 }
 
 const useFormItemProps = (fieldRef): FormItemProps => {
@@ -49,9 +49,9 @@ const EditableInner = observer(
     setup(props, { attrs, slots }) {
       const fieldRef = useField<Field>()
       const innerRef = ref(document.body)
-      const pattern = useInitialPattern(fieldRef)
       const prefixCls = `${stylePrefix}-editable`
       const setEditable = (payload: boolean) => {
+        const pattern = useInitialPattern(fieldRef)
         // console.log('pattern', pattern)
         if (pattern.value !== 'editable') return
         fieldRef.value.setPattern(payload ? 'editable' : 'readPretty')
@@ -59,6 +59,8 @@ const EditableInner = observer(
 
       const dispose = reaction(
         () => {
+          const pattern = useInitialPattern(fieldRef)
+
           return pattern
         },
         (pattern) => {
@@ -72,8 +74,8 @@ const EditableInner = observer(
       )
 
       onBeforeUnmount(() => {
-        const field = fieldRef.value
-        field.setPattern(pattern.value)
+        // const field = fieldRef.value
+        // field.setPattern(pattern.value)
         dispose()
       })
 
@@ -81,6 +83,7 @@ const EditableInner = observer(
         const field = fieldRef.value
         const editable = field.pattern === 'editable'
         const itemProps = useFormItemProps(fieldRef)
+        const pattern = useInitialPattern(fieldRef)
 
         const closeEditable = () => {
           if (editable && !fieldRef.value?.errors?.length) {
@@ -133,9 +136,7 @@ const EditableInner = observer(
           return h(
             FormBaseItem,
             {
-              attrs: {
-                ...attrs,
-              },
+              ...attrs,
             },
             {
               default: () => {
@@ -155,33 +156,27 @@ const EditableInner = observer(
           'div',
           {
             class: prefixCls,
-            ref: 'innerRef',
+            ref: innerRef,
             onClick: onClick,
           },
-          {
-            default: () => {
-              return h(
-                'div',
-                {
-                  class: `${prefixCls}-content`,
-                },
-                {
-                  default: () => [
-                    h(
-                      FormBaseItem,
-                      {
-                        ...attrs,
-                        ...itemProps,
-                      },
-                      slots
-                    ),
-                    renderEditHelper(),
-                    renderCloseHelper(),
-                  ],
-                }
-              )
+          h(
+            'div',
+            {
+              class: `${prefixCls}-content`,
             },
-          }
+            [
+              h(
+                FormBaseItem,
+                {
+                  ...attrs,
+                  ...itemProps,
+                },
+                slots
+              ),
+              renderEditHelper(),
+              renderCloseHelper(),
+            ]
+          )
         )
       }
     },
