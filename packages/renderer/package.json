@@ -1,7 +1,7 @@
 {
   "name": "@formily/antdv-x3-renderer",
   "private": true,
-  "version": "0.0.2-alpha.0",
+  "version": "1.0.0-alpha.1",
   "license": "MIT",
   "main": "lib",
   "types": "lib/index.d.ts",
