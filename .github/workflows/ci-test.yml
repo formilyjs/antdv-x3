@@ -31,7 +31,7 @@ jobs:
           reporter: github-check
           eslint_flags: '.'
       - run: |
-          yarn workspace @formily/antdv-x3 build
+          yarn build
           ls -l packages/components 
 
           
