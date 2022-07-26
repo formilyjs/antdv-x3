@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.0-alpha.3(2022-07-26)
+
+### :bug: Bug Fixes
+
+1. [fix: build ts error](https://github.com/formilyjs/antdv-x3/commit/0d63b09) :point_right: ( [zhouxinyong](https://github.com/zhouxinyong) )
+
 ## v1.0.0-alpha.2(2022-07-22)
 
 ### :memo: Documents Changes
