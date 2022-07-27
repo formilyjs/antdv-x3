@@ -1,13 +1,61 @@
 import { getParameters } from 'codesandbox/lib/api/define'
 
 const CodeSandBoxHTML = '<div id="app"></div>'
-const CodeSandBoxJS = `
-import Vue from 'vue'
+const CodeSandBoxJS = `import { createApp } from 'vue'
 import App from './App.vue'
-import "@formily/antdv-x3/dist/antdv-x3.css";
-import "ant-design-vue/dist/antd.css";
+import "@formily/antdv-x3/dist/antdv-x3.css"
+import "ant-design-vue/dist/antd.css"
 
-Vue.createApp(App).mount('#app')
+createApp(App).mount('#app')
+`
+
+const TsconfigContent = `{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "useDefineForClassFields": true,
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "baseUrl": ".",
+    "types": [
+      "webpack-env"
+    ],
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
+`
+const ShimsVueContent = `declare module '*.vue' {
+  import type { DefineComponent } from 'vue'
+  const component: DefineComponent<{}, {}, any>
+  export default component
+}
 `
 
 const createForm = ({ method, action, data }) => {
@@ -69,8 +117,10 @@ export function createCodeSandBox(codeStr) {
           devDependencies: {
             '@vue/cli-plugin-babel': '~5.0.0',
             '@vue/cli-service': '~5.0.0',
+            '@vue/cli-plugin-typescript': '~5.0.0',
             less: 'latest',
             'less-loader': 'latest',
+            typescript: '~4.5.5',
           },
           babel: {
             presets: ['@vue/cli-plugin-babel/preset'],
@@ -98,11 +148,17 @@ export function createCodeSandBox(codeStr) {
       'src/App.vue': {
         content: codeStr,
       },
-      'src/main.js': {
+      'src/main.ts': {
         content: CodeSandBoxJS,
+      },
+      'src/shims-vue.d.ts': {
+        content: ShimsVueContent,
       },
       'public/index.html': {
         content: CodeSandBoxHTML,
+      },
+      'tsconfig.json': {
+        content: TsconfigContent,
       },
     },
   })
