@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.0.0-alpha.4(2022-07-29)
+
+### :bug: Bug Fixes
+
+1. [fix: children not show in FormGrid](https://github.com/formilyjs/antdv-x3/commit/40abb2a) :point_right: ( [zhouxinyong](https://github.com/zhouxinyong) )
+
+### :blush: Other Changes
+
+1. [chore: change codesandbox code template](https://github.com/formilyjs/antdv-x3/commit/58e185e) :point_right: ( [zhouxinyong](https://github.com/zhouxinyong) )
+
 ## v1.0.0-alpha.3(2022-07-26)
 
 ### :bug: Bug Fixes
