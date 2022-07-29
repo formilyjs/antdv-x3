@@ -95,7 +95,7 @@ const FormGridInner = observer(
         type: Object as PropType<Grid<HTMLElement>>,
       },
     },
-    setup(props) {
+    setup(props, { slots }) {
       const layout = useFormLayout()
 
       const gridInstance = computed(() => {
@@ -126,31 +126,23 @@ const FormGridInner = observer(
         })
       })
 
-      return {
-        prefixCls,
-        root,
-        gridInstance,
+      return () => {
+        return h(
+          'div',
+          {
+            class: `${prefixCls}`,
+            style: {
+              gridTemplateColumns: gridInstance.value.templateColumns,
+              gap: gridInstance.value.gap,
+            },
+            ref: root,
+          },
+          slots
+        )
       }
     },
-    render() {
-      const { prefixCls, gridInstance } = this
-      return h(
-        'div',
-        {
-          class: `${prefixCls}`,
-          style: {
-            gridTemplateColumns: gridInstance.templateColumns,
-            gap: gridInstance.gap,
-          },
-          ref: 'root',
-        },
-        {
-          default: () => this.$slots.default,
-        }
-      )
-    },
   })
-) as any
+)
 
 const FormGridColumn = observer(
   // eslint-disable-next-line vue/one-component-per-file

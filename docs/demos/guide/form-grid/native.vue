@@ -145,7 +145,6 @@
 import { FormGrid } from '@formily/antdv-x3'
 
 const Cell = (props, { slots }) => {
-  console.log(props)
   return (
     <div
       style={{
