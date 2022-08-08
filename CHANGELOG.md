@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.0-alpha.5(2022-08-08)
+
+### :bug: Bug Fixes
+
+1. [fix: checkbox datePicker](https://github.com/formilyjs/antdv-x3/commit/ce0f21e) :point_right: ( [zhouxinyong](https://github.com/zhouxinyong) )
+
 ## v1.0.0-alpha.4(2022-07-29)
 
 ### :bug: Bug Fixes
