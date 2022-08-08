@@ -126,7 +126,6 @@ const createFormStep = (defaultCurrent = 0): IFormStep => {
 }
 
 const FormStepInner = observer(
-  // eslint-disable-next-line vue/one-component-per-file
   defineComponent({
     name: 'FormStep',
     props: {
@@ -165,21 +164,19 @@ const FormStepInner = observer(
               h(
                 Steps,
                 {
+                  ...attrs,
                   current,
-                  style: [{ marginBottom: '10px' }, attrs.style],
-                  attrs,
+                  class: [`${prefixCls}-steps`],
                 },
-                {
-                  default: () =>
-                    renderSteps(steps, ({ props }, key) => {
-                      return h(Step, { props, key }, {})
-                    }),
-                }
+                () =>
+                  renderSteps(steps, ({ props }, key) => {
+                    return h(Step, { ...props, key })
+                  })
               ),
 
               renderSteps(steps, ({ name, schema }, key) => {
                 if (key !== current) return
-                return h(RecursionField, { name, schema, key }, {})
+                return h(RecursionField, { name, schema, key })
               }),
             ],
           }
@@ -189,9 +186,9 @@ const FormStepInner = observer(
   })
 )
 
-// eslint-disable-next-line vue/one-component-per-file
 const StepPane = defineComponent<StepProps>({
   name: 'FormStepPane',
+  inheritAttrs: false,
   setup(_props, { slots }) {
     return () => h(FragmentComponent, {}, slots)
   },
