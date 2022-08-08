@@ -25,7 +25,7 @@
       :component="[
         DatePicker,
         {
-          mode: 'year',
+          picker: 'year',
         },
       ]"
     />
@@ -36,7 +36,7 @@
       :component="[
         DatePicker,
         {
-          mode: 'time',
+          showTime: true,
         },
       ]"
     />
@@ -79,4 +79,3 @@ export default {
   },
 }
 </script>
-l

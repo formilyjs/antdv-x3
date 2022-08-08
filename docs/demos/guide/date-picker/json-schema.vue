@@ -37,7 +37,7 @@ const schema = {
       'x-decorator': 'FormItem',
       'x-component': 'DatePicker',
       'x-component-props': {
-        mode: 'year',
+        picker: 'year',
       },
     },
     dateTime: {
@@ -46,7 +46,7 @@ const schema = {
       'x-decorator': 'FormItem',
       'x-component': 'DatePicker',
       'x-component-props': {
-        mode: 'time',
+        showTime: true,
       },
     },
     '[startDate,endDate]': {
@@ -85,4 +85,3 @@ export default {
   },
 }
 </script>
-l

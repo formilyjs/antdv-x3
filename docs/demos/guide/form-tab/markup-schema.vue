@@ -74,7 +74,7 @@
   </FormProvider>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { createForm } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/vue'
 import {
@@ -86,7 +86,7 @@ import {
 } from '@formily/antdv-x3'
 import { Button } from 'ant-design-vue'
 
-const SchemaField = createSchemaField({
+const { SchemaField, SchemaVoidField, SchemaStringField } = createSchemaField({
   components: {
     FormItem,
     FormTab,
@@ -94,30 +94,11 @@ const SchemaField = createSchemaField({
   },
 })
 
-export default {
-  components: {
-    FormProvider,
-    FormButtonGroup,
-    // eslint-disable-next-line vue/no-reserved-component-names
-    Button,
-    Submit,
-    ...SchemaField,
-  },
+const form = createForm()
+const formTab = FormTab.createFormTab()
 
-  data() {
-    const form = createForm()
-    const formTab = FormTab.createFormTab()
-
-    return {
-      form,
-      formTab,
-    }
-  },
-  methods: {
-    log(values) {
-      console.log(values)
-    },
-  },
+const log = (values) => {
+  console.log(values)
 }
 </script>
 

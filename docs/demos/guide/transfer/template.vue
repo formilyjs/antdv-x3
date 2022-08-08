@@ -8,11 +8,11 @@
       :data-source="[
         {
           title: '选项1',
-          key: 1,
+          key: '1',
         },
         {
           title: '选项2',
-          key: 2,
+          key: '2',
         },
       ]"
     />

@@ -43,7 +43,6 @@ const useFormItemProps = (fieldRef): FormItemProps => {
 }
 
 const EditableInner = observer(
-  // eslint-disable-next-line vue/one-component-per-file
   defineComponent<EditableProps>({
     name: 'Editable',
     setup(props, { attrs, slots }) {
@@ -52,7 +51,6 @@ const EditableInner = observer(
       const prefixCls = `${stylePrefix}-editable`
       const setEditable = (payload: boolean) => {
         const pattern = useInitialPattern(fieldRef)
-        // console.log('pattern', pattern)
         if (pattern.value !== 'editable') return
         fieldRef.value.setPattern(payload ? 'editable' : 'readPretty')
       }
@@ -60,7 +58,6 @@ const EditableInner = observer(
       const dispose = reaction(
         () => {
           const pattern = useInitialPattern(fieldRef)
-
           return pattern
         },
         (pattern) => {
@@ -74,8 +71,6 @@ const EditableInner = observer(
       )
 
       onBeforeUnmount(() => {
-        // const field = fieldRef.value
-        // field.setPattern(pattern.value)
         dispose()
       })
 

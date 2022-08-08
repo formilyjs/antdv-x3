@@ -10,6 +10,7 @@
       <SchemaStringField
         name="input"
         title="输入框"
+        :required="true"
         x-decorator="Editable"
         x-component="Input"
       />

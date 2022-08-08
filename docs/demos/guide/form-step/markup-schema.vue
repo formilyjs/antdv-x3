@@ -8,6 +8,7 @@
         >
           <SchemaStringField
             name="aaa"
+            title="AAA"
             x-decorator="FormItem"
             required
             x-component="Input"
@@ -19,6 +20,7 @@
         >
           <SchemaStringField
             name="bbb"
+            title="AAA"
             x-decorator="FormItem"
             required
             x-component="Input"
@@ -31,6 +33,7 @@
         >
           <SchemaStringField
             name="ccc"
+            title="AAA"
             x-decorator="FormItem"
             required
             x-component="Input"
@@ -68,7 +71,7 @@
   </FormProvider>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 /* eslint-disable vue/no-reserved-component-names */
 import { createForm } from '@formily/core'
 import { FormProvider, FormConsumer, createSchemaField } from '@formily/vue'
@@ -81,38 +84,19 @@ import {
 } from '@formily/antdv-x3'
 import { Button } from 'ant-design-vue'
 
-const SchemaField = createSchemaField({
+const { SchemaField, SchemaVoidField, SchemaStringField } = createSchemaField({
   components: {
     FormItem,
     FormStep,
     Input,
   },
 })
+
+const form = createForm()
 const formStep = FormStep.createFormStep()
 
-export default {
-  components: {
-    FormConsumer,
-    FormProvider,
-    FormButtonGroup,
-    Button,
-    Submit,
-    ...SchemaField,
-  },
-
-  data() {
-    const form = createForm()
-
-    return {
-      form,
-      formStep,
-    }
-  },
-  methods: {
-    log() {
-      this.formStep.submit(console.log)
-    },
-  },
+const log = () => {
+  formStep.submit(console.log)
 }
 </script>
 

@@ -20,6 +20,7 @@ import {
   CloseCircleOutlined,
   CheckCircleOutlined,
   WarningOutlined,
+  InfoCircleOutlined,
 } from '@ant-design/icons-vue'
 
 export type FormItemProps = {
@@ -258,7 +259,7 @@ export const FormBaseItem = defineComponent({
           'div',
           {
             class: `${prefixCls}-label-content`,
-            ref: 'containerRef',
+            ref: containerRef,
           },
           {
             default: () => [
@@ -313,7 +314,7 @@ export const FormBaseItem = defineComponent({
                     placement: 'top',
                   },
                   {
-                    default: () => [h('i', { class: 'el-icon-info' }, {})],
+                    default: () => [h(InfoCircleOutlined)],
                     content: () =>
                       h(
                         'div',
@@ -377,7 +378,14 @@ export const FormBaseItem = defineComponent({
               [`${prefixCls}-help-enter-active`]: true,
             },
           },
-          { default: () => [resolveComponent(feedbackText)] }
+          {
+            default: () => {
+              const text = Array.isArray(feedbackText)
+                ? feedbackText.join(',')
+                : feedbackText
+              return resolveComponent(text)
+            },
+          }
         )
 
       const renderExtra =

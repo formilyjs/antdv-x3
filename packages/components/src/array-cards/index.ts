@@ -41,16 +41,20 @@ const isOperationComponent = (schema: ISchema) => {
 const ArrayCardsInner = observer(
   defineComponent({
     name: 'ArraryCards',
+    inheritAttrs: false,
+    props: ['onChange'],
     setup(_props: CardProps, { attrs }) {
       const fieldRef = useField<ArrayField>()
       const schemaRef = useFieldSchema()
       const prefixCls = `${stylePrefix}-array-cards`
       const { getKey, keyMap } = ArrayBase.useKey(schemaRef.value)
+      const props = { ...attrs }
+
       return () => {
-        const props = { ...attrs }
         const field = fieldRef.value
         const schema = schemaRef.value
         const dataSource = Array.isArray(field.value) ? field.value : []
+
         if (!schema) throw new Error('can not found schema object')
         const renderItems = () => {
           return dataSource?.map((item, index) => {
@@ -113,19 +117,21 @@ const ArrayCardsInner = observer(
                 index,
                 record: item,
               },
-              () =>
-                h(
-                  Card,
-                  {
-                    ...attrs,
-                    class: [`${prefixCls}-item`],
-                  },
-                  {
-                    default: () => content,
-                    title: () => title,
-                    extra: () => extra,
-                  }
-                )
+              {
+                default: () =>
+                  h(
+                    Card,
+                    {
+                      ...attrs,
+                      class: [`${prefixCls}-item`],
+                    },
+                    {
+                      default: () => content,
+                      title: () => title,
+                      extra: () => extra,
+                    }
+                  ),
+              }
             )
           })
         }

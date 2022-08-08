@@ -25,7 +25,7 @@
         x-decorator="FormItem"
         x-component="DatePicker"
         :x-component-props="{
-          mode: 'year',
+          picker: 'year',
         }"
       />
       <SchemaStringField
@@ -34,7 +34,7 @@
         x-decorator="FormItem"
         x-component="DatePicker"
         :x-component-props="{
-          mode: 'time',
+          showTime: true,
         }"
       />
       <SchemaArrayField
@@ -79,4 +79,3 @@ export default {
   },
 }
 </script>
-l

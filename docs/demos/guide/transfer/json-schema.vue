@@ -17,8 +17,8 @@ const schema = {
       type: 'array',
       title: '穿梭框',
       enum: [
-        { title: '选项1', key: 1 },
-        { title: '选项2', key: 2 },
+        { title: '选项1', key: '1' },
+        { title: '选项2', key: '2' },
       ],
       'x-decorator': 'FormItem',
       'x-component': 'Transfer',

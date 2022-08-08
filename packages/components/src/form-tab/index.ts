@@ -65,6 +65,7 @@ const FormTabInner = observer(
   // eslint-disable-next-line vue/one-component-per-file
   defineComponent({
     name: 'FormTab',
+    inheritAttrs: false,
     props: ['formTab'],
     setup(props: IFormTabProps, { attrs }) {
       const field = useField().value
@@ -102,8 +103,8 @@ const FormTabInner = observer(
             return h(
               TabPane,
               {
-                key: name,
                 ...props,
+                key: name,
                 tab: badgedTab(name, props),
                 forceRender: true,
               },
@@ -126,8 +127,7 @@ const FormTabInner = observer(
           Tabs,
           {
             ...attrs,
-            class: [prefixCls],
-            style: attrs.style,
+            class: [prefixCls, attrs.class],
             activeKey: activeKey,
             onChange: (key) => {
               props?.onChange?.(key)
@@ -146,6 +146,7 @@ const FormTabInner = observer(
 // eslint-disable-next-line vue/one-component-per-file
 const FormTabPane = defineComponent<IFormTabPaneProps>({
   name: 'FormTabPane',
+  inheritAttrs: false,
   setup(_props, { slots }) {
     return () => h(FragmentComponent, {}, slots)
   },
