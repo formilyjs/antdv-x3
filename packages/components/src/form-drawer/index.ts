@@ -98,8 +98,8 @@ export function FormDrawer(
   const props = getDrawerProps(title)
 
   const drawerProps = {
-    ...props,
     width: '40%',
+    ...props,
     onClose: () => {
       props.onClose?.()
       env.app?.unmount()
