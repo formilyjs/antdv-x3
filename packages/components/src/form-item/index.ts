@@ -282,7 +282,7 @@ export const FormBaseItem = defineComponent({
             },
             {
               default: () => [labelChildren],
-              content: () =>
+              title: () =>
                 h(
                   'div',
                   {},
@@ -315,7 +315,7 @@ export const FormBaseItem = defineComponent({
                   },
                   {
                     default: () => [h(InfoCircleOutlined)],
-                    content: () =>
+                    title: () =>
                       h(
                         'div',
                         {
