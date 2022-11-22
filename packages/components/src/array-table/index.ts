@@ -102,6 +102,7 @@ const useArrayTableSources = (
 }
 
 const useArrayTableColumns = (
+  dataSource: any[],
   sources: ObservableColumnSource[]
 ): ColumnProps[] => {
   return sources.reduce((buf, { name, columnProps, schema, display }, key) => {
@@ -111,7 +112,9 @@ const useArrayTableColumns = (
       ...columnProps,
       key,
       dataIndex: name,
-      customRender: ({ record, index }) => {
+      customRender: ({ record }) => {
+        const index = dataSource.indexOf(record)
+
         const children = h(
           ArrayBase.Item,
           {
@@ -309,7 +312,7 @@ const ArrayTableInner = observer(
         const field = fieldRef.value
         const dataSource = Array.isArray(field.value) ? field.value.slice() : []
         const sources = useArrayTableSources(fieldRef, schemaRef)
-        const columns = useArrayTableColumns(sources)
+        const columns = useArrayTableColumns(dataSource, sources)
         const pagination = isBool(props.pagination) ? {} : props.pagination
 
         const renderStateManager = () =>
