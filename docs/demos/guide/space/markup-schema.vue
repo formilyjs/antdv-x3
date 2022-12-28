@@ -83,7 +83,7 @@
         </SchemaVoidField>
       </SchemaField>
       <FormButtonGroup align-form-item>
-        <Submit on-submit="log">提交</Submit>
+        <Submit :on-submit="log">提交</Submit>
       </FormButtonGroup>
     </FormLayout>
   </FormProvider>
