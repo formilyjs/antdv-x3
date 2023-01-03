@@ -3,7 +3,7 @@
     <FormLayout :label-col="6" :wrapper-col="16">
       <SchemaField :schema="schema" />
       <FormButtonGroup align-form-item>
-        <Submit on-submit="log">提交</Submit>
+        <Submit :on-submit="log">提交</Submit>
       </FormButtonGroup>
     </FormLayout>
   </FormProvider>
@@ -129,7 +129,7 @@ export default {
     }
   },
   methods: {
-    logs(value) {
+    log(value) {
       console.log(value)
     },
   },
