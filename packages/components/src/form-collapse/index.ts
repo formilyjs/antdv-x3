@@ -148,7 +148,7 @@ const _FormCollapse = observer(
           Collapse,
           {
             class: prefixCls,
-            ...props,
+            ...attrs,
             activeKey,
             onChange: (key: string | string[]) => {
               emit('input', key)
