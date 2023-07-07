@@ -1,5 +1,25 @@
 # Changelog
 
+## v1.0.0-alpha.7(2023-07-07)
+
+### No Change Log
+
+## v1.0.0-alpha.6(2023-07-07)
+
+### :bug: Bug Fixes
+
+1. [fix: fix form-collapse props can't use](https://github.com/formilyjs/antdv-x3/commit/439d7e1) :point_right: ( [yiyunwan](https://github.com/yiyunwan) )
+
+1. [fix(array-table): fix form not update when pagination changed](https://github.com/formilyjs/antdv-x3/commit/c377663) :point_right: ( [frehaiku](https://github.com/frehaiku) )
+
+1. [fix: form-item tooltip not display](https://github.com/formilyjs/antdv-x3/commit/09d80d6) :point_right: ( [Tangchen2016](https://github.com/Tangchen2016) )
+
+1. [fix: form drawer width could change](https://github.com/formilyjs/antdv-x3/commit/31f7159) :point_right: ( [shiqian](https://github.com/shiqian) )
+
+### :memo: Documents Changes
+
+1. [docs(spce-demo): fix wrong code in space demo](https://github.com/formilyjs/antdv-x3/commit/2b67302) :point_right: ( [zhen](https://github.com/zhen) )
+
 ## v1.0.0-alpha.5(2022-08-08)
 
 ### :bug: Bug Fixes
